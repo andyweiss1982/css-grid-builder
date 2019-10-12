@@ -55,6 +55,7 @@
       }
       #wrapper {
         border: 1px dashed black;
+        font-size: 0.8rem;
         background-color: whitesmoke;
       }
       #wrapper input, #wrapper select {
@@ -302,14 +303,24 @@
                     key={i}
                     style={{
                       backgroundColor: 'lightslategray',
-                      padding: '5px',
+                      padding: '10px',
                       display: 'grid',
                       placeItems: 'center',
                       gridArea: div.gridArea,
+                      justifySelf: div.justifySelf,
+                      alignSelf: div.alignSelf,
+                      width: div.width,
+                      height: div.height
                     }}
                   >
-                    <div>
-                      <div>
+                    <div
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr 1fr',
+                        gridGap: '10px'
+                      }}
+                    >
+                      <div style={{ gridColumn: 'span 2' }}>
                         <label htmlFor={`grid-area-${i}`}>grid-area</label>
                         <input
                           id={`grid-area-${i}`}
@@ -378,6 +389,26 @@
                             ].map(val => <option key={val}>{val}</option>)
                           }
                         </select>
+                      </div>
+                      <div>
+                        <label htmlFor={`width-${i}`}>width</label>
+                        <input
+                          id={`width-${i}`}
+                          type="text"
+                          value={div.width}
+                          name="width"
+                          onChange={ e => updateDiv(i, e.target.name, e.target.value) }
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor={`height-${i}`}>height</label>
+                        <input
+                          id={`height-${i}`}
+                          type="text"
+                          value={div.height}
+                          name="height"
+                          onChange={ e => updateDiv(i, e.target.name, e.target.value) }
+                        />
                       </div>
                     </div>
                   </div>
