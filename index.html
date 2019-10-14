@@ -57,6 +57,9 @@
       #wrapper input, #wrapper select {
         margin: 5px auto;
       }
+      pre {
+        white-space: pre-wrap;
+      }
     </style>
   </head>
   <body>
@@ -151,7 +154,7 @@
                   { exporting ? '✏️' : '👁️' }
                 </aside>
                 {
-                  exporting ? <pre>{markup}</pre> :
+                  exporting ? <pre style={{gridColumn: 'span 2'}}>{markup}</pre> :
                   <React.Fragment>
                     <div style={{gridColumn: 'span 2'}}>
                       <span style={{backgroundColor: 'white'}}>
