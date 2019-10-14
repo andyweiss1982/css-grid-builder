@@ -63,7 +63,11 @@
     <div id="root"></div>
     <script type="text/babel">
       const Grid = () => {
-        const newDiv = () => ({ gridArea: 'span 1 / span 1', justifySelf: '', alignSelf: ''})
+        const newDiv = () => ({
+          gridArea: 'span 1 / span 1',
+          justifySelf: 'normal', alignSelf: 'normal',
+          width: 'auto', height: 'auto'
+        })
         const [divs, setDivs] = React.useState([])
         const [width, setWidth] = React.useState('auto')
         const [height, setHeight] = React.useState('auto')
@@ -72,10 +76,10 @@
         const [gridTemplateRows, setGridTemplateRows] = React.useState('')
         const [gridAutoRows, setGridAutoRows] = React.useState('minmax(200px, auto)')
         const [gridGap, setGridGap] = React.useState('10px')
-        const [justifyContent, setJustifyContent] = React.useState('')
-        const [justifyItems, setJustifyItems] = React.useState('')
-        const [alignContent, setAlignContent] = React.useState('')
-        const [alignItems, setAlignItems] = React.useState('')
+        const [justifyContent, setJustifyContent] = React.useState('normal')
+        const [justifyItems, setJustifyItems] = React.useState('normal')
+        const [alignContent, setAlignContent] = React.useState('normal')
+        const [alignItems, setAlignItems] = React.useState('normal')
         const [exporting, setExporting] = React.useState(false)
         const [markup, setMarkup] = React.useState('')
         const updateDiv = (i, name, value) => {
@@ -231,8 +235,6 @@
                             "center",
                             "start",
                             "end",
-                            "flex-start",
-                            "flex-end",
                             "left",
                             "right",
                             "normal",
@@ -262,8 +264,6 @@
                             "center",
                             "start",
                             "end",
-                            "flex-start",
-                            "flex-end",
                             "self-start",
                             "self-end",
                             "left",
@@ -290,8 +290,6 @@
                             "center",
                             "start",
                             "end",
-                            "flex-start",
-                            "flex-end",
                             "normal",
                             "baseline",
                             "first baseline",
@@ -321,8 +319,6 @@
                             "center",
                             "start",
                             "end",
-                            "flex-start",
-                            "flex-end",
                             "baseline",
                             "first baseline",
                             "last baseline",
@@ -417,8 +413,6 @@
                                 "center",
                                 "start",
                                 "end",
-                                "flex-start",
-                                "flex-end",
                                 "self-start",
                                 "self-end",
                                 "left",
@@ -449,8 +443,6 @@
                                 "center",
                                 "start",
                                 "end",
-                                "flex-start",
-                                "flex-end",
                                 "baseline",
                                 "first baseline",
                                 "last baseline",
