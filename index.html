@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>CSS Grid Demo</title>
+    <title>#grid.builder</title>
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -154,6 +154,11 @@
                 {
                   exporting ? <pre>{markup}</pre> :
                   <React.Fragment>
+                    <div style={{gridColumn: 'span 2'}}>
+                      <span style={{backgroundColor: 'white'}}>
+                        #grid.builder
+                      </span>
+                    </div>
                     <div>
                       <label htmlFor="width">width</label>
                       <input
