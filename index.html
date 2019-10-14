@@ -54,10 +54,8 @@
         margin-bottom: 10px;
       }
       #wrapper {
-        border: 1px dashed black;
         font-size: 0.8rem;
         background-color: whitesmoke;
-
       }
       #wrapper input, #wrapper select {
         margin: 5px auto;
@@ -69,7 +67,7 @@
     <script type="text/babel">
       const Grid = () => {
         const newDiv = () => ({ gridArea: 'span 1 / span 1', justifySelf: '', alignSelf: ''})
-        const [divs, setDivs] = React.useState([newDiv()])
+        const [divs, setDivs] = React.useState([])
         const [width, setWidth] = React.useState('auto')
         const [height, setHeight] = React.useState('auto')
         const [gridTemplateAreas, setGridTemplateAreas] = React.useState('')
@@ -357,6 +355,7 @@
               id="wrapper"
               style={{
                 display: 'grid',
+                border: divs.length ? '1px dashed black' : '0',
                 width,
                 height,
                 gridTemplateAreas,
